@@ -10,10 +10,13 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect("mongodb://localhost:27017/templatesDB", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  "mongodb+srv:tabraiz:tabraiz@cluster0.76smate.mongodb.net/tamplateDB?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 const seedTemplates = async () => {
   const templates = [
@@ -67,7 +70,6 @@ const seedTemplates = async () => {
     },
   ];
 
- 
   await Template.deleteMany({});
   await Template.insertMany(templates);
   console.log("Database initialized with template data.");
