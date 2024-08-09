@@ -11,11 +11,8 @@ app.use(cors());
 app.use(bodyParser.json());
 
 mongoose.connect(
-  "mongodb+srv:tabraiz:tabraiz@cluster0.76smate.mongodb.net/tamplateDB?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
+  "mongodb+srv://tabraiz:tabraiz@cluster0.76smate.mongodb.net/tamplateDB?retryWrites=true&w=majority",
+  
 );
 
 const seedTemplates = async () => {
